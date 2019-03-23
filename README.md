@@ -17,7 +17,7 @@ Define your WIFI SSID and password in the user-data files:
 
     WIFI_SSID=MYSSID
     WIFI_PASSWORD=MYPASSWORD
-    sed -i -e "s/ssid=\"[^\"]*\"/ssid=\"$WIFI_SSID\"/ ; s/psk=\"[^\"]*\"/psk=\"$WIFI_PASSWORD\"/" *.yaml
+    sed -i "" "s/ssid=\"[^\"]*\"/ssid=\"$WIFI_SSID\"/ ; s/psk=\"[^\"]*\"/psk=\"$WIFI_PASSWORD\"/" *.yaml
 
 Optionally add your public RSA/DSA SSH keys to the user-data files:
 

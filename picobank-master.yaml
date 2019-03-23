@@ -7,6 +7,18 @@
 # I have wasted many hours creating servers to find out the module I was trying to use wasn't in the cloud-init version I had
 # Documentation: http://cloudinit.readthedocs.io/en/0.7.9/index.html
 
+system_info:
+   default_user:
+     name: pirate
+     gecos: "Hypriot Pirate"
+     sudo: ALL=(ALL) NOPASSWD:ALL
+     shell: /bin/bash
+     groups: users,docker,video
+     plain_text_passwd: hypriot
+     lock_passwd: false
+     ssh_pwauth: true
+     chpasswd: { expire: false }
+
 # Set your hostname here, the manage_etc_hosts will update the hosts file entries as well
 hostname: picobank-master 
 manage_etc_hosts: true
@@ -18,18 +30,6 @@ growpart:
     mode: auto
     devices: ["/"]
     ignore_growroot_disabled: false
-
-# You could modify this for your own user information
-users:
-  - name: pirate
-    gecos: "Hypriot Pirate"
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    shell: /bin/bash
-    groups: users,docker,video
-    plain_text_passwd: hypriot
-    lock_passwd: false
-    ssh_pwauth: true
-    chpasswd: { expire: false }
 
 # # WiFi connect to HotSpot
 # To make wifi work with RPi3 and RPi0
@@ -49,8 +49,8 @@ write_files:
       ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
       update_config=1
       network={
-      ssid="<WIFI_SSID>"
-      psk="<WIFI_PASSWORD>"
+      ssid="<YOUR SSID>"
+      psk="<YOUR WIFI PASSWORD>"
       proto=RSN
       key_mgmt=WPA-PSK
       pairwise=CCMP
