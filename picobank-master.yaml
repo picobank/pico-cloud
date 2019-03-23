@@ -49,8 +49,8 @@ write_files:
       ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
       update_config=1
       network={
-      ssid="TR"
-      psk="720ADD19FB"
+      ssid="<WIFI_SSID>"
+      psk="<WIFI_PASSWORD>"
       proto=RSN
       key_mgmt=WPA-PSK
       pairwise=CCMP
