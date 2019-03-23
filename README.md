@@ -36,3 +36,4 @@ Optionally add your public RSA/DSA SSH keys to the user-data files:
 Flash the various SD cards:
 
     sudo flash --userdata picobank-master.yaml -f -d /dev/sde hypriotos-rpi-v1.10.0.img.zip
+    sudo flash --userdata picobank-node1.yaml -f -d /dev/sde hypriotos-rpi-v1.10.0.img.zip
