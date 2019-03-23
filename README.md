@@ -12,6 +12,13 @@ Install Hypriot's `flash` tool:
     chmod +x flash
     sudo mv flash /usr/local/bin/flash
 
+
+Define your WIFI SSID and password in the user-data files:
+
+    WIFI_SSID=MYSSID
+    WIFI_PASSWORD=MYPASSWORD
+    sed -i -e "s/ssid=\"[^\"]*\"/ssid=\"$WIFI_SSID\"/ ; s/psk=\"[^\"]*\"/psk=\"$WIFI_PASSWORD\"/" *.yaml
+
 Flash the various SD cards:
 
     sudo flash --userdata picobank-master.yaml -f -d /dev/sde hypriotos-rpi-v1.10.0.img.zip
