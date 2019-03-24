@@ -57,6 +57,20 @@ write_files:
       auth_alg=OPEN
       }
     path: /etc/wpa_supplicant/wpa_supplicant.conf
+  - content: |
+      hostname
+      clientid
+      persistent
+      option rapid_commit
+      option domain_name_servers, domain_name, domain_search, host_name
+      option classless_static_routes
+      option ntp_servers
+      option interface_mtu
+      require dhcp_server_identifier
+      slaac private
+      interface eth0
+      static ip_address=192.168.100.1/24
+    path: /etc/dhcpcd.conf
 
 # These commands will be ran once on first boot only
 #runcmd:
